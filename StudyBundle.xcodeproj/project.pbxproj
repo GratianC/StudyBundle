@@ -21,6 +21,7 @@
 		7E9D998B27FA0C3700031658 /* Quick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9D998A27FA0C3700031658 /* Quick.swift */; };
 		7EE9A08027FA91F000BC5104 /* PictureHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE9A07F27FA91F000BC5104 /* PictureHandler.swift */; };
 		7EE9A08427FA9C4700BC5104 /* meme1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7EE9A08327FA9C4700BC5104 /* meme1.gif */; };
+		7EE9A08627FB4BC200BC5104 /* GIFFuncView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE9A08527FB4BC200BC5104 /* GIFFuncView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		7E9D998A27FA0C3700031658 /* Quick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quick.swift; sourceTree = "<group>"; };
 		7EE9A07F27FA91F000BC5104 /* PictureHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureHandler.swift; sourceTree = "<group>"; };
 		7EE9A08327FA9C4700BC5104 /* meme1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = meme1.gif; sourceTree = "<group>"; };
+		7EE9A08527FB4BC200BC5104 /* GIFFuncView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFFuncView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				7E9D998527FA0B0D00031658 /* AutoScrollView.swift */,
+				7EE9A08527FB4BC200BC5104 /* GIFFuncView.swift */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EE9A08027FA91F000BC5104 /* PictureHandler.swift in Sources */,
+				7EE9A08627FB4BC200BC5104 /* GIFFuncView.swift in Sources */,
 				7E9D995927FA0A6D00031658 /* ViewController.swift in Sources */,
 				7E9D998B27FA0C3700031658 /* Quick.swift in Sources */,
 				7E9D995527FA0A6D00031658 /* AppDelegate.swift in Sources */,
