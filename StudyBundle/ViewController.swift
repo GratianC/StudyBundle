@@ -17,14 +17,18 @@ class ViewController: UIViewController {
     private func setupView() {
         
         _ = autoSrollView
-       _ = gifResolveButton
+        _ = gifResolveButton
+        _ = gifComposeButton
     }
     
     @objc
     private func gifResolveButtonClick() {
         GIFHandler.resolveGIFToLocal("meme1")
     }
-
+    
+    @objc private func gifComposeButtonClick() {
+        GIFHandler.composeGIFImage()
+    }
     
     // MARK: LAZY
     lazy var autoSrollView: AutoScrollBackgroundView = {
@@ -41,5 +45,15 @@ class ViewController: UIViewController {
         view.addSubview(gifResolveButton)
         return gifResolveButton
     }()
+    
+    lazy var gifComposeButton: UIButton = {
+        let gifComposeButton = UIButton(frame: CGRect(x: 20, y: 70, width: 200, height: 50))
+        gifComposeButton.setTitle("gifComposeButton", for: .normal)
+        gifComposeButton.addTarget(self, action: #selector(gifComposeButtonClick), for: .touchUpInside)
+        gifComposeButton.backgroundColor = .orange
+        view.addSubview(gifComposeButton)
+        return gifComposeButton
+    }()
 }
 
+ 
