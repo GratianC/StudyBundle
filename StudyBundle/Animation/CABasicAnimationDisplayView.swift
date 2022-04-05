@@ -29,6 +29,9 @@ class CABasicAnimationDisplayView: UIView {
         _ = cornerRadiusButton
         _ = borderWidthButton
         _ = backgroundColorButton
+        _ = borderColorButton
+        _ = opacityButton
+        _ = shadowButton
     }
     
     @objc
@@ -103,6 +106,34 @@ class CABasicAnimationDisplayView: UIView {
         backgroundColorButton.layer.add(animation, forKey: "")
     }
     
+    @objc
+    private func borderColorButtonClick() {
+        
+        // 边框颜色
+        let animation = Quick.creatBasicAnimation("borderColor", UIColor.green.cgColor, UIColor.gray.cgColor, nil, 2, .forwards, true)
+        borderColorButton.layer.borderWidth = 5
+        borderColorButton.layer.add(animation, forKey: nil)
+    }
+    
+    @objc
+    private func opacityButtonClick() {
+        
+        // 透明度,默认fromValue为0
+        // fromValue 使用颜色为默认0,red,pink除外,会导致动画不生效
+        let animation = Quick.creatBasicAnimation("opacity", UIColor.black.cgColor, 1, nil, 5, .forwards, true)
+        opacityButton.layer.add(animation, forKey: nil)
+    }
+    
+    @objc
+    private func shadowButtonClick() {
+        
+        // 阴影渐变
+        let animation = Quick.creatBasicAnimation("shadowOffset", nil, CGSize(width: 10, height: 10), nil, 2, .forwards, true)
+        shadowButton.layer.shadowColor = UIColor.red.cgColor
+        shadowButton.layer.shadowOpacity = 0.5
+        shadowButton.layer.add(animation, forKey: nil)
+    }
+    
     // MAKR: LAZY
     lazy var postionButton: UIButton = {
         let postionButton = UIButton(frame: CGRect(x: 20, y: 20, width: 200, height: 50))
@@ -165,5 +196,32 @@ class CABasicAnimationDisplayView: UIView {
         backgroundColorButton.backgroundColor = .purple
         addSubview(backgroundColorButton)
         return backgroundColorButton
+    }()
+    
+    lazy var borderColorButton: UIButton = {
+        let borderColorButton = UIButton(frame: CGRect(x: 20, y: 370, width: 200, height: 50))
+        borderColorButton.setTitle("BorderColorButton", for: .normal)
+        borderColorButton.addTarget(self, action: #selector(borderColorButtonClick), for: .touchUpInside)
+        borderColorButton.backgroundColor = .cyan
+        addSubview(borderColorButton)
+        return borderColorButton
+    }()
+    
+    lazy var opacityButton: UIButton = {
+        let opacityButton = UIButton(frame: CGRect(x: 20, y: 420, width: 200, height: 50))
+        opacityButton.setTitle("OpacityButton", for: .normal)
+        opacityButton.addTarget(self, action: #selector(opacityButtonClick), for: .touchUpInside)
+        opacityButton.backgroundColor = .systemPink
+        addSubview(opacityButton)
+        return opacityButton
+    }()
+    
+    lazy var shadowButton: UIButton = {
+        let shadowButton = UIButton(frame: CGRect(x: 20, y: 470, width: 200, height: 50))
+        shadowButton.setTitle("ShadowButton", for: .normal)
+        shadowButton.addTarget(self, action: #selector(shadowButtonClick), for: .touchUpInside)
+        shadowButton.backgroundColor = .lightGray
+        addSubview(shadowButton)
+        return shadowButton
     }()
 }

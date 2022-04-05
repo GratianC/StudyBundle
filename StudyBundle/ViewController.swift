@@ -16,21 +16,24 @@ class ViewController: UIViewController {
     private func setupView() {
         
         _ = autoSrollView
-        _ = gifFuncViewButton
-        _ = caBasicAnimationViewButton
+        _ = displayTableView
     }
     
-    @objc
     private func gifFuncViewButtonClick() {
         
         let gifFuncView = GIFFuncView(frame: view.bounds)
+        let positionX = view.frame.size.width
+        let positionY = view.frame.size.height
+        let animation = Quick.creatBasicAnimation("position", CGPoint(x: positionX + positionX/2, y: positionY/2), CGPoint(x: positionX/2, y: positionY/2), nil, 0.5, .forwards, false)
+        gifFuncView.layer.add(animation, forKey: nil)
         view.addSubview(gifFuncView)
     }
     
-    @objc
-    private func cabBsicAnimationViewButtonClick() {
+    private func caBsicAnimationViewButtonClick() {
             
         let caBasicAnimationDisplayView = CABasicAnimationDisplayView(frame: view.bounds)
+        let animation = Quick.creatBasicAnimation("opacity", UIColor.systemCyan.cgColor, 1, nil, 4, .forwards, false)
+        caBasicAnimationDisplayView.layer.add(animation, forKey: nil)
         view.addSubview(caBasicAnimationDisplayView)
     }
     
@@ -41,23 +44,48 @@ class ViewController: UIViewController {
         return autoSrollView
     }()
     
-    lazy var gifFuncViewButton: UIButton = {
-        let gifFuncViewButton = UIButton(frame: CGRect(x: 20, y: 20, width: 200, height: 50))
-        gifFuncViewButton.setTitle("GIFFuncViewButton", for: .normal)
-        gifFuncViewButton.backgroundColor = .orange
-        gifFuncViewButton.addTarget(self, action: #selector(gifFuncViewButtonClick), for: .touchUpInside)
-        view.addSubview(gifFuncViewButton)
-        return gifFuncViewButton
+    lazy var displayTableView: UITableView = {
+        let displayTableView = UITableView.init(frame: view.bounds, style: UITableView.Style.grouped)
+        displayTableView.register(UITableViewCell.self, forCellReuseIdentifier: "DisplayTableViewCell")
+        displayTableView.delegate = self
+        displayTableView.dataSource = self
+        displayTableView.layer.contents = UIColor.white.cgColor
+        displayTableView.layer.opacity = 0.5
+        view.addSubview(displayTableView)
+        return displayTableView
     }()
-   
-    lazy var caBasicAnimationViewButton: UIButton = {
-        let caBasicAnimationViewButton = UIButton(frame: CGRect(x: 20, y: 70, width: 200, height: 50))
-        caBasicAnimationViewButton.setTitle("CABasicAnimationViewButton", for: .normal)
-        caBasicAnimationViewButton.backgroundColor = .blue
-        caBasicAnimationViewButton.addTarget(self, action: #selector(cabBsicAnimationViewButtonClick), for: .touchUpInside)
-        view.addSubview(caBasicAnimationViewButton)
-        return caBasicAnimationViewButton
+    
+    lazy var funcArray: [String] = {
+        let funcArray = ["GIFFuncView", "CABasicAnimationDisplayView"]
+        return funcArray
     }()
+}
+
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return funcArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let title = funcArray[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DisplayTableViewCell")
+        cell!.textLabel!.text = title
+        return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        switch(indexPath.row) {
+        case 0:
+            gifFuncViewButtonClick()
+        case 1:
+            caBsicAnimationViewButtonClick()
+        default:
+            break
+        }
+    }
+    
 }
 
  
