@@ -20,8 +20,9 @@ class GIFHandler {
         
         if let gifPath = Bundle.main.path(forResource: fileName, ofType: "gif") {
             if let gifData = try? Data(contentsOf: URL(fileURLWithPath: gifPath)) {
+                // 由于Swift是ARC的关系,不加optionsDic也不会导致CGImageRef占用缓存得不到释放
                 let optionsDic = [kCGImageSourceShouldCache : kCFBooleanFalse]
-                let gifDataSource = CGImageSourceCreateWithData(gifData as CFData, nil)
+                let gifDataSource = CGImageSourceCreateWithData(gifData as CFData, optionsDic as CFDictionary)
                 guard let _ = gifDataSource else { return nil}
                 let gifImageCount = CGImageSourceGetCount(gifDataSource!)
                 var imageList = [UIImage]()

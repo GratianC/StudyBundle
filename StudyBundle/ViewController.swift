@@ -17,12 +17,21 @@ class ViewController: UIViewController {
         
         _ = autoSrollView
         _ = gifFuncViewButton
+        _ = caBasicAnimationViewButton
     }
     
-    @objc private func gifFuncViewButtonClick() {
+    @objc
+    private func gifFuncViewButtonClick() {
         
         let gifFuncView = GIFFuncView(frame: view.bounds)
         view.addSubview(gifFuncView)
+    }
+    
+    @objc
+    private func cabBsicAnimationViewButtonClick() {
+            
+        let caBasicAnimationDisplayView = CABasicAnimationDisplayView(frame: view.bounds)
+        view.addSubview(caBasicAnimationDisplayView)
     }
     
     // MARK: LAZY
@@ -41,6 +50,14 @@ class ViewController: UIViewController {
         return gifFuncViewButton
     }()
    
+    lazy var caBasicAnimationViewButton: UIButton = {
+        let caBasicAnimationViewButton = UIButton(frame: CGRect(x: 20, y: 70, width: 200, height: 50))
+        caBasicAnimationViewButton.setTitle("CABasicAnimationViewButton", for: .normal)
+        caBasicAnimationViewButton.backgroundColor = .blue
+        caBasicAnimationViewButton.addTarget(self, action: #selector(cabBsicAnimationViewButtonClick), for: .touchUpInside)
+        view.addSubview(caBasicAnimationViewButton)
+        return caBasicAnimationViewButton
+    }()
 }
 
  

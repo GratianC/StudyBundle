@@ -22,20 +22,30 @@ class GIFFuncView: UIView {
     
     private func setupView() {
         
+        backgroundColor = .white
+        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(remove)))
         _ = gifResolveButton
         _ = gifComposeButton
         _ = gifPresentButton
     }
     
-    @objc private func gifResolveButtonClick() {
+    @objc
+    private func remove() {
+        removeFromSuperview()
+    }
+    
+    @objc
+    private func gifResolveButtonClick() {
         GIFHandler.resolveGIFToLocal("meme1")
     }
     
-    @objc private func gifComposeButtonClick() {
+    @objc
+    private func gifComposeButtonClick() {
         GIFHandler.composeGIFImage()
     }
 
-    @objc private func gifPresentButtonClick() {
+    @objc
+    private func gifPresentButtonClick() {
         
         /// 动图展示数组
         let imageList = GIFHandler.resolveGIFToUIImage("meme1")
