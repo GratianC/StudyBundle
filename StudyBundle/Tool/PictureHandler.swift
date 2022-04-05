@@ -20,12 +20,13 @@ class GIFHandler {
         
         if let gifPath = Bundle.main.path(forResource: fileName, ofType: "gif") {
             if let gifData = try? Data(contentsOf: URL(fileURLWithPath: gifPath)) {
+                let optionsDic = [kCGImageSourceShouldCache : kCFBooleanFalse]
                 let gifDataSource = CGImageSourceCreateWithData(gifData as CFData, nil)
                 guard let _ = gifDataSource else { return nil}
                 let gifImageCount = CGImageSourceGetCount(gifDataSource!)
                 var imageList = [UIImage]()
                 for i in 0...gifImageCount-1 {
-                    if let imageRef = CGImageSourceCreateImageAtIndex(gifDataSource!, i, nil) {
+                    if let imageRef = CGImageSourceCreateImageAtIndex(gifDataSource!, i, optionsDic as CFDictionary) {
                         let image = UIImage(cgImage: imageRef, scale: UIScreen.main.scale, orientation: .up)
                         imageList.append(image)
                     }
