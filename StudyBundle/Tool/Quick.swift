@@ -17,4 +17,17 @@ class Quick {
         view.backgroundColor = backgroundColor
         return view
     }
+    
+    internal class func creatBasicAnimation(_ keyPath: String, _ fromValue: Any?, _ toValue: Any?, _ byValue: Any?, _ duration: CFTimeInterval, _ fillMode: CAMediaTimingFillMode, _ isRemovedOnCompletion: Bool) -> CABasicAnimation {
+        
+        let animation = CABasicAnimation()
+        animation.keyPath = keyPath
+        animation.fromValue = fromValue
+        animation.toValue = toValue
+        animation.byValue = byValue
+        animation.duration = duration
+        animation.fillMode = fillMode
+        animation.isRemovedOnCompletion = isRemovedOnCompletion
+        return animation
+    }
 }
