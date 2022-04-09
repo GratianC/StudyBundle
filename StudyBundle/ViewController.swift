@@ -37,6 +37,14 @@ class ViewController: UIViewController {
         view.addSubview(caBasicAnimationDisplayView)
     }
     
+    private func caKeyframeAnimationViewButonClick() {
+        
+        let caKeyframeAnimationDisplayView = CAKeyframeAnimationDisplayView(frame: view.bounds)
+        let animation = Quick.creatBasicAnimation("transform.translation.x", view.frame.size.width, 0, nil, 0.5, .forwards, false)
+        caKeyframeAnimationDisplayView.layer.add(animation, forKey: nil)
+        view.addSubview(caKeyframeAnimationDisplayView)
+    }
+    
     // MARK: LAZY
     lazy var autoSrollView: AutoScrollBackgroundView = {
         let autoSrollView = AutoScrollBackgroundView(frame: view.bounds)
@@ -56,7 +64,7 @@ class ViewController: UIViewController {
     }()
     
     lazy var funcArray: [String] = {
-        let funcArray = ["GIFFuncView", "CABasicAnimationDisplayView"]
+        let funcArray = ["GIFFuncView", "CABasicAnimationDisplayView", "CAKeyframeAnimationDisplayView"]
         return funcArray
     }()
 }
@@ -81,6 +89,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             gifFuncViewButtonClick()
         case 1:
             caBsicAnimationViewButtonClick()
+        case 2:
+            caKeyframeAnimationViewButonClick()
         default:
             break
         }

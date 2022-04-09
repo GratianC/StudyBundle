@@ -30,4 +30,16 @@ class Quick {
         animation.isRemovedOnCompletion = isRemovedOnCompletion
         return animation
     }
+    
+    internal class func creatKeyframeAnimation(_ keyPath: String, _ values: [Any]?, _ duration: CFTimeInterval, _ fillMode: CAMediaTimingFillMode, _ path: CGPath?, _ isRemovedOnCompletion: Bool) -> CAKeyframeAnimation {
+        
+        let animation = CAKeyframeAnimation()
+        animation.keyPath = keyPath
+        animation.values = values
+        animation.fillMode = fillMode
+        animation.path = path
+        animation.duration = duration
+        animation.isRemovedOnCompletion = isRemovedOnCompletion
+        return animation
+    }
 }

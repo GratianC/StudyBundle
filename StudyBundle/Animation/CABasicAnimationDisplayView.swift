@@ -7,21 +7,19 @@
 
 import UIKit
 
-class CABasicAnimationDisplayView: UIView {
+class CABasicAnimationDisplayView: BaseView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupView()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupView() {
+    override func setupView() {
         
-        backgroundColor = .white
-        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(remove)))
+        super.setupView()
         _ = postionButton
         _ = scaleButton
         _ = rotationButton
@@ -32,11 +30,6 @@ class CABasicAnimationDisplayView: UIView {
         _ = borderColorButton
         _ = opacityButton
         _ = shadowButton
-    }
-    
-    @objc
-    private func remove() {
-        removeFromSuperview()
     }
     
     /// 位置动画

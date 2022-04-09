@@ -20,6 +20,9 @@
 		7E9D998827FA0B7600031658 /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9D998727FA0B7600031658 /* Constans.swift */; };
 		7E9D998B27FA0C3700031658 /* Quick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9D998A27FA0C3700031658 /* Quick.swift */; };
 		7EC5933C27FC0BDB0007EC35 /* CABasicAnimationDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC5933B27FC0BDB0007EC35 /* CABasicAnimationDisplayView.swift */; };
+		7ED35B172801272C0030718A /* CAKeyframeAnimationDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED35B162801272C0030718A /* CAKeyframeAnimationDisplayView.swift */; };
+		7ED35B1928012E050030718A /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED35B1828012E050030718A /* BaseView.swift */; };
+		7ED35B1D28013AF30030718A /* UIColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED35B1C28013AF30030718A /* UIColor+Ex.swift */; };
 		7EE9A08027FA91F000BC5104 /* PictureHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE9A07F27FA91F000BC5104 /* PictureHandler.swift */; };
 		7EE9A08427FA9C4700BC5104 /* meme1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7EE9A08327FA9C4700BC5104 /* meme1.gif */; };
 		7EE9A08627FB4BC200BC5104 /* GIFFuncView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE9A08527FB4BC200BC5104 /* GIFFuncView.swift */; };
@@ -60,6 +63,9 @@
 		7E9D998727FA0B7600031658 /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
 		7E9D998A27FA0C3700031658 /* Quick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quick.swift; sourceTree = "<group>"; };
 		7EC5933B27FC0BDB0007EC35 /* CABasicAnimationDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CABasicAnimationDisplayView.swift; sourceTree = "<group>"; };
+		7ED35B162801272C0030718A /* CAKeyframeAnimationDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAKeyframeAnimationDisplayView.swift; sourceTree = "<group>"; };
+		7ED35B1828012E050030718A /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		7ED35B1C28013AF30030718A /* UIColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
 		7EE9A07F27FA91F000BC5104 /* PictureHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureHandler.swift; sourceTree = "<group>"; };
 		7EE9A08327FA9C4700BC5104 /* meme1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = meme1.gif; sourceTree = "<group>"; };
 		7EE9A08527FB4BC200BC5104 /* GIFFuncView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFFuncView.swift; sourceTree = "<group>"; };
@@ -113,6 +119,7 @@
 		7E9D995327FA0A6D00031658 /* StudyBundle */ = {
 			isa = PBXGroup;
 			children = (
+				7ED35B1A28013AD90030718A /* Extension */,
 				7EE9A08227FA9C1D00BC5104 /* Resource */,
 				7E9D998927FA0C0E00031658 /* Tool */,
 				7E9D998427FA0AEF00031658 /* Animation */,
@@ -150,7 +157,9 @@
 			children = (
 				7E9D998527FA0B0D00031658 /* AutoScrollView.swift */,
 				7EE9A08527FB4BC200BC5104 /* GIFFuncView.swift */,
+				7ED35B1828012E050030718A /* BaseView.swift */,
 				7EC5933B27FC0BDB0007EC35 /* CABasicAnimationDisplayView.swift */,
+				7ED35B162801272C0030718A /* CAKeyframeAnimationDisplayView.swift */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -162,6 +171,22 @@
 				7EE9A07F27FA91F000BC5104 /* PictureHandler.swift */,
 			);
 			path = Tool;
+			sourceTree = "<group>";
+		};
+		7ED35B1A28013AD90030718A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7ED35B1B28013AE10030718A /* UIColor */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		7ED35B1B28013AE10030718A /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				7ED35B1C28013AF30030718A /* UIColor+Ex.swift */,
+			);
+			path = UIColor;
 			sourceTree = "<group>";
 		};
 		7EE9A08227FA9C1D00BC5104 /* Resource */ = {
@@ -304,14 +329,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7ED35B1D28013AF30030718A /* UIColor+Ex.swift in Sources */,
 				7EE9A08027FA91F000BC5104 /* PictureHandler.swift in Sources */,
 				7EE9A08627FB4BC200BC5104 /* GIFFuncView.swift in Sources */,
 				7E9D995927FA0A6D00031658 /* ViewController.swift in Sources */,
 				7E9D998B27FA0C3700031658 /* Quick.swift in Sources */,
 				7E9D995527FA0A6D00031658 /* AppDelegate.swift in Sources */,
+				7ED35B172801272C0030718A /* CAKeyframeAnimationDisplayView.swift in Sources */,
 				7E9D998827FA0B7600031658 /* Constans.swift in Sources */,
 				7E9D998627FA0B0D00031658 /* AutoScrollView.swift in Sources */,
 				7EC5933C27FC0BDB0007EC35 /* CABasicAnimationDisplayView.swift in Sources */,
+				7ED35B1928012E050030718A /* BaseView.swift in Sources */,
 				7E9D995727FA0A6D00031658 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
