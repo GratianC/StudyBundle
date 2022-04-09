@@ -21,6 +21,7 @@ class CAKeyframeAnimationDisplayView: BaseView {
         super.setupView()
         _ = opacityButton
         _ = pathButton
+        _ = groupButton
     }
     
     @objc
@@ -52,6 +53,20 @@ class CAKeyframeAnimationDisplayView: BaseView {
             ctx.strokePath()
         }
     }
+    
+    @objc
+    private func groupButtonClick() {
+        
+        let rotate = Quick.creatBasicAnimation("transform.rotation", nil, CGFloat.pi, nil, 0, .forwards, true)
+        let scale = Quick.creatBasicAnimation("transform.scale", nil, 0.0, nil, 0, .forwards, true)
+        let move = Quick.creatBasicAnimation("transform.translation", nil, CGPoint(x: 217, y: -230), nil, 0, .forwards, true)
+        let animationGroup = CAAnimationGroup()
+        animationGroup.animations = [rotate, scale, move]
+        animationGroup.duration = 2
+        animationGroup.fillMode = .forwards
+        animationGroup.isRemovedOnCompletion = true
+        groupButton.layer.add(animationGroup, forKey: nil)
+    }
   
     // MARK: LAZY
     lazy var opacityButton: UIButton = {
@@ -71,4 +86,14 @@ class CAKeyframeAnimationDisplayView: BaseView {
         addSubview(pathButton)
         return pathButton
     }()
+    
+    lazy var groupButton: UIButton = {
+        let groupButton = UIButton(frame: CGRect(x: 20, y: 120, width: 200, height: 50))
+        groupButton.setTitle("Group", for: .normal)
+        groupButton.addTarget(self, action: #selector(groupButtonClick), for: .touchUpInside)
+        groupButton.backgroundColor = .randomColor
+        addSubview(groupButton)
+        return groupButton
+    }()
+
 }
