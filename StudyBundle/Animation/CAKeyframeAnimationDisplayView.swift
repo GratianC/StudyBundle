@@ -22,6 +22,8 @@ class CAKeyframeAnimationDisplayView: BaseView {
         _ = opacityButton
         _ = pathButton
         _ = groupButton
+        _ = waterRipleButton
+        _ = uploadProgressButton
     }
     
     @objc
@@ -46,12 +48,12 @@ class CAKeyframeAnimationDisplayView: BaseView {
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        if let ctx = UIGraphicsGetCurrentContext() {
-            ctx.addArc(center: self.center, radius: 25 / 2, startAngle: CGFloat.pi , endAngle: CGFloat.pi*2, clockwise: false)
-            ctx.setLineWidth(2)
-            UIColor.randomColor.set()
-            ctx.strokePath()
-        }
+//        if let ctx = UIGraphicsGetCurrentContext() {
+//            ctx.addArc(center: self.center, radius: 25 / 2, startAngle: CGFloat.pi , endAngle: CGFloat.pi*2, clockwise: false)
+//            ctx.setLineWidth(2)
+//            UIColor.randomColor.set()
+//            ctx.strokePath()
+//        }
     }
     
     @objc
@@ -96,4 +98,16 @@ class CAKeyframeAnimationDisplayView: BaseView {
         return groupButton
     }()
 
+    lazy var waterRipleButton: WaterRipleButton = {
+        let waterRipleButton = WaterRipleButton(frame: CGRect(x: 20, y: 170, width: 200, height: 50))
+        waterRipleButton.setTitle("WaterRiple", for: .normal)
+        addSubview(waterRipleButton)
+        return waterRipleButton
+    }()
+    
+    lazy var uploadProgressButton: UploadProgressButton = {
+        let uploadProgressButton = UploadProgressButton(frame: CGRect(x: 20, y: 220, width: 200, height: 50), "Upload")
+        addSubview(uploadProgressButton)
+        return uploadProgressButton
+    }()
 }
