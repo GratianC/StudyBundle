@@ -37,17 +37,20 @@ class UploadProgressButton: UIButton {
         
         backgroundView.frame = CGRect(x: 0, y: 0, width: button_w, height: button_h)
         backgroundView.backgroundColor = freshBlue
+//        backgroundView.isUserInteractionEnabled = false
         
         borderView.frame = CGRect(x: 0, y: 0, width: button_w, height: button_h)
         borderView.backgroundColor = UIColor.clear
-        
         borderView.layer.borderColor = freshGreen.cgColor
         borderView.layer.borderWidth = 3
+//        borderView.isUserInteractionEnabled = false
         
         reTitleLabel.frame = CGRect(x: 0, y: 0, width: button_w, height: button_h)
         reTitleLabel.text = buttonTitle
         reTitleLabel.textAlignment = .center
         reTitleLabel.backgroundColor = UIColor.clear
+        // 开启自视图的响应之后Button点击事件会回传响应父视图的点击事件，关闭则点击即可动画
+        // 但是关闭后点击第二次会导致Bad Access(code = 1,···)崩溃，暂时原因不明
         reTitleLabel.isUserInteractionEnabled = true
         
         addSubview(backgroundView)
@@ -70,7 +73,7 @@ class UploadProgressButton: UIButton {
         animationGroup.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         animationGroup.animations = [cornerAnimation, boundsAnimation, opacityAnimation]
         
-        let borderAnimation = Quick.creatBasicAnimation("borderColor", nil, UIColor(red: 244.0 / 255.0, green: 244.0 / 255, blue: 244.0 / 255, alpha: 1), nil, 0, .forwards, false)
+        let borderAnimation = Quick.creatBasicAnimation("borderColor", nil, UIColor(red: 244.0 / 255.0, green: 244.0 / 255.0, blue: 244.0 / 255.0, alpha: 1), nil, 0, .forwards, false)
         let animationGroupAll = CAAnimationGroup()
         animationGroupAll.duration = 1
         animationGroupAll.repeatCount = 1
@@ -152,9 +155,9 @@ extension UploadProgressButton: CircleViewDelegate {
         borderAnimationGroup.fillMode = .forwards
         borderAnimationGroup.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         borderAnimationGroup.animations = [cornerAnimation, boundsAnimation, opacityAnimation, borderAnimation]
+        borderAnimationGroup.setValue("buttonAnimationSpread", forKey: "borderAnimationSpreadkey")
         CATransaction.begin()
         backgroundView.layer.add(group, forKey: "backgroundViewSpread")
-        borderAnimationGroup.setValue("buttonAnimationSpread", forKey: "borderAnimationSpreadkey")
         borderView.layer.add(borderAnimationGroup, forKey: "borderViewSpread")
         CATransaction.commit()
     }
