@@ -61,7 +61,7 @@ class CABasicAnimationDisplayView: BaseView {
     private func rotationButtonClick() {
         
         // 旋转
-        let animation = Quick.creatBasicAnimation("transform.rotation", nil, CGFloat.pi/2, nil, 2, .forwards, true)
+        let animation = Quick.creatBasicAnimation("transform.rotation", nil, CGFloat.pi*2, nil, 2, .forwards, true)
         rotationButton.layer.add(animation, forKey: nil)
     }
     

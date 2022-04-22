@@ -7,7 +7,13 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
+    
+    /// 粒子视图类型
+    private var emitterType = EmitterType.Flame
+    
+    private var gradientType = GratidentDisplayType.Scan
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +51,24 @@ class ViewController: UIViewController {
         view.addSubview(caKeyframeAnimationDisplayView)
     }
     
+    private func caEmitterAnimationViewButtonClick() {
+        
+        let caEmitterAnimationDisplayView = CAEmitterAnimationDisplayView(frame: view.bounds, &emitterType)
+        view.addSubview(caEmitterAnimationDisplayView)
+    }
+    
+    private func caGradientLayerAnimationViewButtonClick() {
+        
+        let caGradientLayerAnimationDisplayView = CAGradientAnimationDisplayView(frame: view.bounds, &gradientType)
+        view.addSubview(caGradientLayerAnimationDisplayView)
+    }
+    
+    private func caShapeLayerAnimationViewButtonClick() {
+        
+        let caShapeLayerAnimationDisplayView = CAShapeLayerAnimationDisplayView(frame: view.bounds)
+        view.addSubview(caShapeLayerAnimationDisplayView)
+    }
+    
     // MARK: LAZY
     lazy var autoSrollView: AutoScrollBackgroundView = {
         let autoSrollView = AutoScrollBackgroundView(frame: view.bounds)
@@ -64,7 +88,7 @@ class ViewController: UIViewController {
     }()
     
     lazy var funcArray: [String] = {
-        let funcArray = ["GIFFuncView", "CABasicAnimationDisplayView", "CAKeyframeAnimationDisplayView"]
+        let funcArray = ["GIFFuncView", "CABasicAnimationDisplayView", "CAKeyframeAnimationDisplayView", "CAEmitterAnimationDisplayView", "CAGradientLayerAnimationDisplayView", "CAShapeLayerAnimationDisplayView"]
         return funcArray
     }()
 }
@@ -91,6 +115,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             caBsicAnimationViewButtonClick()
         case 2:
             caKeyframeAnimationViewButonClick()
+        case 3:
+            caEmitterAnimationViewButtonClick()
+        case 4:
+            caGradientLayerAnimationViewButtonClick()
+        case 5:
+            caShapeLayerAnimationViewButtonClick()
         default:
             break
         }

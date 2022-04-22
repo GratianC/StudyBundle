@@ -49,7 +49,7 @@ class UploadProgressButton: UIButton {
         reTitleLabel.text = buttonTitle
         reTitleLabel.textAlignment = .center
         reTitleLabel.backgroundColor = UIColor.clear
-        // 开启自视图的响应之后Button点击事件会回传响应父视图的点击事件，关闭则点击即可动画
+        // 开启自视图的响应之后Button点击事件会回传响应父视图的点击事件，关闭则不会
         // 但是关闭后点击第二次会导致Bad Access(code = 1,···)崩溃，暂时原因不明
         reTitleLabel.isUserInteractionEnabled = true
         

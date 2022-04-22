@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E14BF462807FFDD00E53DC1 /* CAEmitterAnimationDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E14BF452807FFDD00E53DC1 /* CAEmitterAnimationDisplayView.swift */; };
+		7E5C0C8D280E5AB100F282C7 /* CAGradientAnimationDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5C0C8C280E5AB100F282C7 /* CAGradientAnimationDisplayView.swift */; };
+		7E5C0C8F280E96DB00F282C7 /* CAShapeLayerAnimationDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5C0C8E280E96DB00F282C7 /* CAShapeLayerAnimationDisplayView.swift */; };
 		7E6EFB76280529B300C026C0 /* WaterRipleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6EFB75280529B300C026C0 /* WaterRipleButton.swift */; };
 		7E9D995527FA0A6D00031658 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9D995427FA0A6D00031658 /* AppDelegate.swift */; };
 		7E9D995727FA0A6D00031658 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9D995627FA0A6D00031658 /* SceneDelegate.swift */; };
@@ -49,6 +52,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E14BF452807FFDD00E53DC1 /* CAEmitterAnimationDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAEmitterAnimationDisplayView.swift; sourceTree = "<group>"; };
+		7E5C0C8C280E5AB100F282C7 /* CAGradientAnimationDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAGradientAnimationDisplayView.swift; sourceTree = "<group>"; };
+		7E5C0C8E280E96DB00F282C7 /* CAShapeLayerAnimationDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAShapeLayerAnimationDisplayView.swift; sourceTree = "<group>"; };
 		7E6EFB75280529B300C026C0 /* WaterRipleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterRipleButton.swift; sourceTree = "<group>"; };
 		7E9D995127FA0A6D00031658 /* StudyBundle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyBundle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E9D995427FA0A6D00031658 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -102,14 +108,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7E6EFB742805298200C026C0 /* View */ = {
+		7E6EFB742805298200C026C0 /* Widge */ = {
 			isa = PBXGroup;
 			children = (
 				7E6EFB75280529B300C026C0 /* WaterRipleButton.swift */,
 				7EA47F6928058AB000BB7CF0 /* UploadProgressButton.swift */,
 				7EB67CF1280672AF007570A3 /* CircleView.swift */,
 			);
-			path = View;
+			path = Widge;
 			sourceTree = "<group>";
 		};
 		7E9D994827FA0A6D00031658 = {
@@ -171,12 +177,15 @@
 		7E9D998427FA0AEF00031658 /* Animation */ = {
 			isa = PBXGroup;
 			children = (
-				7E6EFB742805298200C026C0 /* View */,
+				7E6EFB742805298200C026C0 /* Widge */,
 				7E9D998527FA0B0D00031658 /* AutoScrollView.swift */,
 				7EE9A08527FB4BC200BC5104 /* GIFFuncView.swift */,
 				7ED35B1828012E050030718A /* BaseView.swift */,
 				7EC5933B27FC0BDB0007EC35 /* CABasicAnimationDisplayView.swift */,
 				7ED35B162801272C0030718A /* CAKeyframeAnimationDisplayView.swift */,
+				7E14BF452807FFDD00E53DC1 /* CAEmitterAnimationDisplayView.swift */,
+				7E5C0C8C280E5AB100F282C7 /* CAGradientAnimationDisplayView.swift */,
+				7E5C0C8E280E96DB00F282C7 /* CAShapeLayerAnimationDisplayView.swift */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -350,7 +359,10 @@
 				7EE9A08027FA91F000BC5104 /* PictureHandler.swift in Sources */,
 				7EE9A08627FB4BC200BC5104 /* GIFFuncView.swift in Sources */,
 				7E6EFB76280529B300C026C0 /* WaterRipleButton.swift in Sources */,
+				7E5C0C8F280E96DB00F282C7 /* CAShapeLayerAnimationDisplayView.swift in Sources */,
 				7E9D995927FA0A6D00031658 /* ViewController.swift in Sources */,
+				7E5C0C8D280E5AB100F282C7 /* CAGradientAnimationDisplayView.swift in Sources */,
+				7E14BF462807FFDD00E53DC1 /* CAEmitterAnimationDisplayView.swift in Sources */,
 				7E9D998B27FA0C3700031658 /* Quick.swift in Sources */,
 				7EB67CF2280672AF007570A3 /* CircleView.swift in Sources */,
 				7E9D995527FA0A6D00031658 /* AppDelegate.swift in Sources */,
