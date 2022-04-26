@@ -69,6 +69,18 @@ class ViewController: UIViewController {
         view.addSubview(caShapeLayerAnimationDisplayView)
     }
     
+    private func caReplicatorLayeAnimationViewButtonClick() {
+        
+        let caReplicatorLayerAnimationDisplayView = CAReplicatorLayerAnimationDisplayView(frame: view.bounds)
+        view.addSubview(caReplicatorLayerAnimationDisplayView)
+    }
+    
+    private func caTransform3DCoverFlowAnimationDisplayView() {
+        
+        let caTransform3DCoverFlowAnimationDisplayView = CATransform3DCoverFlowAnimationDisplayView(frame: view.bounds)
+        view.addSubview(caTransform3DCoverFlowAnimationDisplayView)
+    }
+    
     // MARK: LAZY
     lazy var autoSrollView: AutoScrollBackgroundView = {
         let autoSrollView = AutoScrollBackgroundView(frame: view.bounds)
@@ -88,7 +100,7 @@ class ViewController: UIViewController {
     }()
     
     lazy var funcArray: [String] = {
-        let funcArray = ["GIFFuncView", "CABasicAnimationDisplayView", "CAKeyframeAnimationDisplayView", "CAEmitterAnimationDisplayView", "CAGradientLayerAnimationDisplayView", "CAShapeLayerAnimationDisplayView"]
+        let funcArray = ["GIFFuncView", "CABasicAnimationDisplayView", "CAKeyframeAnimationDisplayView", "CAEmitterAnimationDisplayView", "CAGradientLayerAnimationDisplayView", "CAShapeLayerAnimationDisplayView", "CAReplicatorLayerAnimationDisplayView", "CATransform3DCoverFlowAnimationDisplayView"]
         return funcArray
     }()
 }
@@ -121,6 +133,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             caGradientLayerAnimationViewButtonClick()
         case 5:
             caShapeLayerAnimationViewButtonClick()
+        case 6:
+            caReplicatorLayeAnimationViewButtonClick()
+        case 7:
+            caTransform3DCoverFlowAnimationDisplayView()
         default:
             break
         }

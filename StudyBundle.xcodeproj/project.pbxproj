@@ -29,6 +29,8 @@
 		7ED35B172801272C0030718A /* CAKeyframeAnimationDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED35B162801272C0030718A /* CAKeyframeAnimationDisplayView.swift */; };
 		7ED35B1928012E050030718A /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED35B1828012E050030718A /* BaseView.swift */; };
 		7ED35B1D28013AF30030718A /* UIColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED35B1C28013AF30030718A /* UIColor+Ex.swift */; };
+		7ED723892817D0D5005EB50B /* CAReplicatorLayerAnimationDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED723882817D0D5005EB50B /* CAReplicatorLayerAnimationDisplayView.swift */; };
+		7ED7238B2817E2B2005EB50B /* CATransform3DCoverFlowAnimationDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED7238A2817E2B2005EB50B /* CATransform3DCoverFlowAnimationDisplayView.swift */; };
 		7EE9A08027FA91F000BC5104 /* PictureHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE9A07F27FA91F000BC5104 /* PictureHandler.swift */; };
 		7EE9A08427FA9C4700BC5104 /* meme1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7EE9A08327FA9C4700BC5104 /* meme1.gif */; };
 		7EE9A08627FB4BC200BC5104 /* GIFFuncView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE9A08527FB4BC200BC5104 /* GIFFuncView.swift */; };
@@ -78,6 +80,8 @@
 		7ED35B162801272C0030718A /* CAKeyframeAnimationDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAKeyframeAnimationDisplayView.swift; sourceTree = "<group>"; };
 		7ED35B1828012E050030718A /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		7ED35B1C28013AF30030718A /* UIColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
+		7ED723882817D0D5005EB50B /* CAReplicatorLayerAnimationDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAReplicatorLayerAnimationDisplayView.swift; sourceTree = "<group>"; };
+		7ED7238A2817E2B2005EB50B /* CATransform3DCoverFlowAnimationDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CATransform3DCoverFlowAnimationDisplayView.swift; sourceTree = "<group>"; };
 		7EE9A07F27FA91F000BC5104 /* PictureHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureHandler.swift; sourceTree = "<group>"; };
 		7EE9A08327FA9C4700BC5104 /* meme1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = meme1.gif; sourceTree = "<group>"; };
 		7EE9A08527FB4BC200BC5104 /* GIFFuncView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFFuncView.swift; sourceTree = "<group>"; };
@@ -186,6 +190,8 @@
 				7E14BF452807FFDD00E53DC1 /* CAEmitterAnimationDisplayView.swift */,
 				7E5C0C8C280E5AB100F282C7 /* CAGradientAnimationDisplayView.swift */,
 				7E5C0C8E280E96DB00F282C7 /* CAShapeLayerAnimationDisplayView.swift */,
+				7ED723882817D0D5005EB50B /* CAReplicatorLayerAnimationDisplayView.swift */,
+				7ED7238A2817E2B2005EB50B /* CATransform3DCoverFlowAnimationDisplayView.swift */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -361,6 +367,7 @@
 				7E6EFB76280529B300C026C0 /* WaterRipleButton.swift in Sources */,
 				7E5C0C8F280E96DB00F282C7 /* CAShapeLayerAnimationDisplayView.swift in Sources */,
 				7E9D995927FA0A6D00031658 /* ViewController.swift in Sources */,
+				7ED7238B2817E2B2005EB50B /* CATransform3DCoverFlowAnimationDisplayView.swift in Sources */,
 				7E5C0C8D280E5AB100F282C7 /* CAGradientAnimationDisplayView.swift in Sources */,
 				7E14BF462807FFDD00E53DC1 /* CAEmitterAnimationDisplayView.swift in Sources */,
 				7E9D998B27FA0C3700031658 /* Quick.swift in Sources */,
@@ -371,6 +378,7 @@
 				7E9D998827FA0B7600031658 /* Constans.swift in Sources */,
 				7E9D998627FA0B0D00031658 /* AutoScrollView.swift in Sources */,
 				7EC5933C27FC0BDB0007EC35 /* CABasicAnimationDisplayView.swift in Sources */,
+				7ED723892817D0D5005EB50B /* CAReplicatorLayerAnimationDisplayView.swift in Sources */,
 				7ED35B1928012E050030718A /* BaseView.swift in Sources */,
 				7E9D995727FA0A6D00031658 /* SceneDelegate.swift in Sources */,
 			);
