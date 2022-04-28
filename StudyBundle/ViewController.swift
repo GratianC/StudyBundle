@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     }
     private func setupView() {
         
+        navigationController?.delegate = self
         _ = autoSrollView
         _ = displayTableView
     }
@@ -81,6 +82,12 @@ class ViewController: UIViewController {
         view.addSubview(caTransform3DCoverFlowAnimationDisplayView)
     }
     
+    private func transitionAnimation() {
+        
+        let sliderVC = SliderViewController()
+        navigationController?.pushViewController(sliderVC, animated: false)
+    }
+    
     // MARK: LAZY
     lazy var autoSrollView: AutoScrollBackgroundView = {
         let autoSrollView = AutoScrollBackgroundView(frame: view.bounds)
@@ -100,7 +107,7 @@ class ViewController: UIViewController {
     }()
     
     lazy var funcArray: [String] = {
-        let funcArray = ["GIFFuncView", "CABasicAnimationDisplayView", "CAKeyframeAnimationDisplayView", "CAEmitterAnimationDisplayView", "CAGradientLayerAnimationDisplayView", "CAShapeLayerAnimationDisplayView", "CAReplicatorLayerAnimationDisplayView", "CATransform3DCoverFlowAnimationDisplayView"]
+        let funcArray = ["GIFFuncView", "CABasicAnimationDisplayView", "CAKeyframeAnimationDisplayView", "CAEmitterAnimationDisplayView", "CAGradientLayerAnimationDisplayView", "CAShapeLayerAnimationDisplayView", "CAReplicatorLayerAnimationDisplayView", "CATransform3DCoverFlowAnimationDisplayView", "TransitionAnimation"]
         return funcArray
     }()
 }
@@ -137,11 +144,17 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             caReplicatorLayeAnimationViewButtonClick()
         case 7:
             caTransform3DCoverFlowAnimationDisplayView()
+        case 8:
+            transitionAnimation()
         default:
             break
         }
     }
-    
 }
 
- 
+extension ViewController: UINavigationControllerDelegate {
+    
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+       return TransitionAnimation()
+    }
+}

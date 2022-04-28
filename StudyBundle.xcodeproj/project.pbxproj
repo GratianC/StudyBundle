@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		7E14BF462807FFDD00E53DC1 /* CAEmitterAnimationDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E14BF452807FFDD00E53DC1 /* CAEmitterAnimationDisplayView.swift */; };
+		7E1BE4AA281A2D5200EC0340 /* UIView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1BE4A9281A2D5200EC0340 /* UIView+Ex.swift */; };
+		7E1BE4AC281A2E5500EC0340 /* SliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1BE4AB281A2E5500EC0340 /* SliderViewController.swift */; };
+		7E1BE4AE281A403600EC0340 /* TransitionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1BE4AD281A403600EC0340 /* TransitionAnimation.swift */; };
 		7E5C0C8D280E5AB100F282C7 /* CAGradientAnimationDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5C0C8C280E5AB100F282C7 /* CAGradientAnimationDisplayView.swift */; };
 		7E5C0C8F280E96DB00F282C7 /* CAShapeLayerAnimationDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5C0C8E280E96DB00F282C7 /* CAShapeLayerAnimationDisplayView.swift */; };
 		7E6EFB76280529B300C026C0 /* WaterRipleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6EFB75280529B300C026C0 /* WaterRipleButton.swift */; };
@@ -55,6 +58,9 @@
 
 /* Begin PBXFileReference section */
 		7E14BF452807FFDD00E53DC1 /* CAEmitterAnimationDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAEmitterAnimationDisplayView.swift; sourceTree = "<group>"; };
+		7E1BE4A9281A2D5200EC0340 /* UIView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ex.swift"; sourceTree = "<group>"; };
+		7E1BE4AB281A2E5500EC0340 /* SliderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderViewController.swift; sourceTree = "<group>"; };
+		7E1BE4AD281A403600EC0340 /* TransitionAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionAnimation.swift; sourceTree = "<group>"; };
 		7E5C0C8C280E5AB100F282C7 /* CAGradientAnimationDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAGradientAnimationDisplayView.swift; sourceTree = "<group>"; };
 		7E5C0C8E280E96DB00F282C7 /* CAShapeLayerAnimationDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAShapeLayerAnimationDisplayView.swift; sourceTree = "<group>"; };
 		7E6EFB75280529B300C026C0 /* WaterRipleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterRipleButton.swift; sourceTree = "<group>"; };
@@ -112,6 +118,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E1BE4A8281A2D4300EC0340 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				7E1BE4A9281A2D5200EC0340 /* UIView+Ex.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
 		7E6EFB742805298200C026C0 /* Widge */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +171,7 @@
 				7E9D995F27FA0A6E00031658 /* LaunchScreen.storyboard */,
 				7E9D996227FA0A6E00031658 /* Info.plist */,
 				7E9D998727FA0B7600031658 /* Constans.swift */,
+				7E1BE4AB281A2E5500EC0340 /* SliderViewController.swift */,
 			);
 			path = StudyBundle;
 			sourceTree = "<group>";
@@ -192,6 +207,7 @@
 				7E5C0C8E280E96DB00F282C7 /* CAShapeLayerAnimationDisplayView.swift */,
 				7ED723882817D0D5005EB50B /* CAReplicatorLayerAnimationDisplayView.swift */,
 				7ED7238A2817E2B2005EB50B /* CATransform3DCoverFlowAnimationDisplayView.swift */,
+				7E1BE4AD281A403600EC0340 /* TransitionAnimation.swift */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -208,6 +224,7 @@
 		7ED35B1A28013AD90030718A /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				7E1BE4A8281A2D4300EC0340 /* UIView */,
 				7ED35B1B28013AE10030718A /* UIColor */,
 			);
 			path = Extension;
@@ -368,12 +385,14 @@
 				7E5C0C8F280E96DB00F282C7 /* CAShapeLayerAnimationDisplayView.swift in Sources */,
 				7E9D995927FA0A6D00031658 /* ViewController.swift in Sources */,
 				7ED7238B2817E2B2005EB50B /* CATransform3DCoverFlowAnimationDisplayView.swift in Sources */,
+				7E1BE4AC281A2E5500EC0340 /* SliderViewController.swift in Sources */,
 				7E5C0C8D280E5AB100F282C7 /* CAGradientAnimationDisplayView.swift in Sources */,
 				7E14BF462807FFDD00E53DC1 /* CAEmitterAnimationDisplayView.swift in Sources */,
 				7E9D998B27FA0C3700031658 /* Quick.swift in Sources */,
 				7EB67CF2280672AF007570A3 /* CircleView.swift in Sources */,
 				7E9D995527FA0A6D00031658 /* AppDelegate.swift in Sources */,
 				7EA47F6A28058AB000BB7CF0 /* UploadProgressButton.swift in Sources */,
+				7E1BE4AE281A403600EC0340 /* TransitionAnimation.swift in Sources */,
 				7ED35B172801272C0030718A /* CAKeyframeAnimationDisplayView.swift in Sources */,
 				7E9D998827FA0B7600031658 /* Constans.swift in Sources */,
 				7E9D998627FA0B0D00031658 /* AutoScrollView.swift in Sources */,
@@ -381,6 +400,7 @@
 				7ED723892817D0D5005EB50B /* CAReplicatorLayerAnimationDisplayView.swift in Sources */,
 				7ED35B1928012E050030718A /* BaseView.swift in Sources */,
 				7E9D995727FA0A6D00031658 /* SceneDelegate.swift in Sources */,
+				7E1BE4AA281A2D5200EC0340 /* UIView+Ex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

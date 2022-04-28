@@ -59,6 +59,7 @@ class CATransform3DCoverFlowAnimationDisplayView: BaseView {
             animGroup.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
             animGroup.animations = [animation, animationBounds]
             imageView.layer.add(animGroup, forKey: "\(i)")
+            
         }
     }
     

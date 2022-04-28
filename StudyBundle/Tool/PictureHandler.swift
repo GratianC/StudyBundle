@@ -9,8 +9,9 @@ import Foundation
 import ImageIO
 import UIKit
 import MobileCoreServices
+import Accelerate
 
-class GIFHandler {
+class PictureHandler {
     
     
     /// 拆解GIF文件至UIImage数组
@@ -106,5 +107,36 @@ class GIFHandler {
         gifPropertiesDic.updateValue(1, forKey: kCGImagePropertyGIFLoopCount as String)
         CGImageDestinationSetProperties(destion, gifPropertiesDic as CFDictionary)
         CGImageDestinationFinalize(destion)
+    }
+    
+    internal class func blurImageFromImage(image: UIImage) -> UIImage? {
+        
+        let blurRadix: UInt32 = 7
+        
+        if let img = image.cgImage,  let inProvider: CGDataProvider = img.dataProvider, let bitmapData: CFData = inProvider.data {
+            var inputBuffer = vImage_Buffer()
+            inputBuffer.data = (UnsafeMutableRawPointer)(mutating: CFDataGetBytePtr(bitmapData))
+            inputBuffer.width = (vImagePixelCount)(img.width)
+            inputBuffer.height = (vImagePixelCount)(img.height)
+            inputBuffer.rowBytes = img.bytesPerRow
+            let pixelBuffer = malloc(img.bytesPerRow * img.height)
+            var outputBuffer = vImage_Buffer()
+            outputBuffer.data = pixelBuffer
+            outputBuffer.width = (vImagePixelCount)(img.width)
+            outputBuffer.height = (vImagePixelCount)(img.height)
+            outputBuffer.rowBytes = img.bytesPerRow
+            vImageBoxConvolve_ARGB8888(&inputBuffer, &outputBuffer, nil, 0, 0, blurRadix, blurRadix, nil, UInt32(kvImageEdgeExtend))
+            let colorSpace = CGColorSpaceCreateDeviceRGB()
+            let w: Int = (Int)(outputBuffer.width)
+            let h: Int = (Int)(outputBuffer.height)
+            if let ctx: CGContext = CGContext (data: outputBuffer.data, width: w, height: h, bitsPerComponent: 8, bytesPerRow: outputBuffer.rowBytes, space: colorSpace, bitmapInfo:img.bitmapInfo.rawValue, releaseCallback: nil, releaseInfo: nil), let imageRef = ctx.makeImage() {
+                let imageNew = UIImage(cgImage: imageRef)
+                free(pixelBuffer)
+                return imageNew
+            }
+            free(pixelBuffer)
+            return nil
+        }
+        return nil
     }
 }

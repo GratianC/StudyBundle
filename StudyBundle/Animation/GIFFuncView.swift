@@ -36,19 +36,19 @@ class GIFFuncView: UIView {
     
     @objc
     private func gifResolveButtonClick() {
-        GIFHandler.resolveGIFToLocal("meme1")
+        PictureHandler.resolveGIFToLocal("meme1")
     }
     
     @objc
     private func gifComposeButtonClick() {
-        GIFHandler.composeGIFImage()
+        PictureHandler.composeGIFImage()
     }
 
     @objc
     private func gifPresentButtonClick() {
         
         /// 动图展示数组
-        let imageList = GIFHandler.resolveGIFToUIImage("meme1")
+        let imageList = PictureHandler.resolveGIFToUIImage("meme1")
         gifDisplayView.animationImages = imageList
         gifDisplayView.animationDuration = 5
         gifDisplayView.animationRepeatCount = 1
