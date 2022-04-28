@@ -22,6 +22,18 @@ class SliderViewController: UIViewController {
         view.addSubview(contentView!)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        sliderLeftViewAnimationStart()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        sliderVCDismiss()
+    }
+    
     func sliderVCDismiss() {
         
         UIView.animate(withDuration: 0.5) {
@@ -34,9 +46,9 @@ class SliderViewController: UIViewController {
     
     func sliderLeftViewAnimationStart() {
         
-        var windowView = UIView()
-        windowView = UIApplication.shared.keyWindow!.rootViewController!.view
-        blurView?.layer.contents = PictureHandler.blurImageFromImage(image:windowView.imageFromUIView()!)?.cgImage
+        var windowView: UIView?
+        windowView = UIApplication.shared.windows.first!.rootViewController!.view
+        blurView?.layer.contents = PictureHandler.blurImageFromImage(image:windowView!.imageFromUIView()!)!.cgImage
         self.view.alpha = 1
         UIView.animate(withDuration: 0.5) {
             self.contentView!.frame = CGRect(x: 0, y: 0, width: screen_width * 0.6, height: screen_height)

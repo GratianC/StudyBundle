@@ -164,14 +164,14 @@
 				7E9D998927FA0C0E00031658 /* Tool */,
 				7E9D998427FA0AEF00031658 /* Animation */,
 				7E9D995427FA0A6D00031658 /* AppDelegate.swift */,
-				7E9D995627FA0A6D00031658 /* SceneDelegate.swift */,
+				7E1BE4AB281A2E5500EC0340 /* SliderViewController.swift */,
 				7E9D995827FA0A6D00031658 /* ViewController.swift */,
+				7E9D998727FA0B7600031658 /* Constans.swift */,
+				7E9D995627FA0A6D00031658 /* SceneDelegate.swift */,
 				7E9D995A27FA0A6D00031658 /* Main.storyboard */,
 				7E9D995D27FA0A6E00031658 /* Assets.xcassets */,
 				7E9D995F27FA0A6E00031658 /* LaunchScreen.storyboard */,
 				7E9D996227FA0A6E00031658 /* Info.plist */,
-				7E9D998727FA0B7600031658 /* Constans.swift */,
-				7E1BE4AB281A2E5500EC0340 /* SliderViewController.swift */,
 			);
 			path = StudyBundle;
 			sourceTree = "<group>";
